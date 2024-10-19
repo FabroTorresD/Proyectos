@@ -1,0 +1,41 @@
+Lenguaje, Cantidad Repositorios, Suma de estrellas
+Sin Lenguaje,103,1495.3
+C#,9,75.3
+C,26,312.4
+Go,39,490.90000000000003
+HTML,34,470.89999999999986
+Jupyter Notebook,3,31.1
+PureBasic,1,9.1
+TypeScript,15,222.0
+Shell,20,247.30000000000004
+OCaml,2,19.200000000000003
+JavaScript,338,4789.699999999998
+PHP,23,234.1
+Objective-C,43,412.5
+Lua,4,40.8
+Haskell,3,26.1
+Ruby,44,522.6
+Assembly,1,24.4
+Python,63,833.4
+Clojure,3,31.099999999999998
+Emacs Lisp,1,12.1
+PowerShell,2,19.2
+Java,67,731.3999999999997
+C++,28,441.90000000000003
+CSS,30,407.6
+Rust,2,30.3
+Objective-C++,3,40.8
+Scala,5,46.3
+TeX,3,28.299999999999997
+Vue,5,44.1
+Perl,2,14.9
+Kotlin,1,6.5
+Rascal,1,13.9
+Julia,1,8.8
+CoffeeScript,7,87.0
+Batchfile,1,11.7
+Swift,28,307.3999999999999
+Vim script,14,141.4
+Elixir,3,26.700000000000003
+Matlab,1,9.1
+Crystal,1,8.4
