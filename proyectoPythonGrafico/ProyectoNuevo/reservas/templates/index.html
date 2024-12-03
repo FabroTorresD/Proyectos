@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - Complejo El Fantasio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #3b82f6;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2563eb;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #d1d5db;
+        }
+        main {
+            padding: 2rem;
+            text-align: center;
+        }
+        main h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        main p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .dynamic-content {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #e2e8f0;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #3b82f6;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        footer p {
+            margin: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        table, th, td {
+            border: 1px solid #cbd5e1;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #2563eb;
+            color: white;
+        }
+        .action-buttons {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .action-buttons button {
+            padding: 12px 24px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .action-buttons button:hover {
+            background-color: #2563eb;
+        }
+    </style>
+    <script src="https://unpkg.com/htmx.org"></script>
+</head>
+<body>
+    <header>
+        <h1>Administración - Complejo El Fantasio</h1>
+    </header>
+    <nav>
+        <a href="#" hx-get="/api/home/" hx-target="#dynamic-content">Inicio</a>
+        <a href="#" hx-get="/api/reservas/" hx-target="#dynamic-content">Reservas</a>
+        <a href="#" hx-get="/api/departamentos/" hx-target="#dynamic-content">Departamentos</a>
+    </nav>
+    <main>
+        <h2>Bienvenido al panel de administración</h2>
+        <p>Gestiona reservas y departamentos fácilmente.</p>
+        <div id="dynamic-content" class="dynamic-content">
+            <!-- Aquí se cargará el contenido dinámicamente -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Complejo El Fantasio. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Contenido dinámico para Reservas -->
+    <script id="reservas-content" type="text/template">
+        <h3>Reservas</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha de Inicio</th>
+                    <th>Fecha de Fin</th>
+                    <th>Cliente</th>
+                    <th>Cantidad de Personas</th>
+                    <th>Departamentos</th>
+                    <th>Monto Total</th>
+                    <th>Monto Pagado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se cargarán dinámicamente las reservas -->
+                <tr>
+                    <td>{{ reserva.fecha_inicio }}</td>
+                    <td>{{ reserva.fecha_fin }}</td>
+                    <td>{{ reserva.cliente }}</td>
+                    <td>{{ reserva.cantidad_de_personas }}</td>
+                    <td>{{ reserva.departamentos.all }}</td>
+                    <td>{{ reserva.montoTotal }}</td>
+                    <td>{{ reserva.montoPagado }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </script>
+
+    <!-- Contenido dinámico para Departamentos -->
+    <script id="departamentos-content" type="text/template">
+        <h3>Departamentos</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se cargarán dinámicamente los departamentos -->
+                <tr>
+                    <td>{{ departamento.nombre }}</td>
+                    <td>{{ departamento.descripcion }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </script>
+
+</body>
+</html>

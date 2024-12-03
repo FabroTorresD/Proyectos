@@ -36,4 +36,7 @@ def clientes(request):
 
 def index(request):
     if request.method == "GET":
-        return JsonResponse({"message": "Hello, world!"})
+        context = {
+            "message": "Hello, world!"
+        }
+        return render(request, "index.html", context)
