@@ -61,10 +61,10 @@ def clientes(request):
         print("Esta es la data que entra al POST")
         print(data)
         
-        # Carga todos los clientes para la validación
+        # Load all clients to verify
         clientes = Cliente.objects.all()  
 
-        # Verifica si el cliente ya existe
+        # Check if the client exists
         for cliente in clientes:
             if cliente.nombre == data['nombre'] and cliente.apellido == data['apellido']:
                 return JsonResponse({'error': 'Este cliente ya existe'}, status=400)
