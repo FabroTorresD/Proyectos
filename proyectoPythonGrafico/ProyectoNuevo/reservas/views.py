@@ -73,6 +73,26 @@ def clientes(request):
         nuevo_cliente = Cliente.objects.create(**data)
         return JsonResponse(model_to_dict(nuevo_cliente), status=201)
     
+    elif request.method == "DELETE":
+        data = json.loads(request.body)
+        print("----------------------------------------")
+        print("Esta es la data que entra:")
+        print(data)
+
+        nombre = data.get("nombre")
+        apellido = data.get("apellido")
+        if not nombre or not apellido:
+            return JsonResponse({'error': 'Nombre y apellido son requeridos'}, status=400)
+        
+        cliente = Cliente.objects.filter(nombre=nombre, apellido=apellido)
+        
+        if cliente.exists():
+            cliente.delete()  # Elimina el cliente si existe
+            return JsonResponse({'message': 'Cliente eliminado exitosamente'}, status=200)
+        else:
+            return JsonResponse({'error': 'Cliente no encontrado'}, status=404)
+
+    
 def index(request):
     if request.method == "GET":
         context = {
