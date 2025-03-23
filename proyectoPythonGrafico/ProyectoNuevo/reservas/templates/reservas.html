@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center mb-4">Listado de Reservas</h2>
+    
+    <!-- Tabla de reservas -->
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Fecha de Inicio</th>
+                <th>Fecha de Fin</th>
+                <th>Cliente</th>
+                <th>Cantidad de Personas</th>
+                <th>Departamentos</th>
+                <th>Monto Total</th>
+                <th>Monto Pagado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reserva in reservas %}
+            <tr>
+                <td>{{ reserva.fecha_inicio }}</td>
+                <td>{{ reserva.fecha_fin }}</td>
+                <td>{{ reserva.cliente }}</td>
+                <td>{{ reserva.cantidad_de_personas }}</td>
+                <td>{{ reserva.departamentos.all|join:", " }}</td>
+                <td>${{ reserva.monto_total }}</td>
+                <td>${{ reserva.monto_pagado }}</td>
+                <td>
+                    <div class="d-flex gap-2">
+                        <a href="{% url 'modificar_reserva' reserva.id %}" class="btn btn-warning btn-sm">Modificar</a>
+                        <form action="{% url 'eliminar_reserva' reserva.id %}" method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8" class="text-center">No hay reservas registradas</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <!-- Botón para agregar nueva reserva -->
+    <div class="text-center mt-4">
+        <a href="{% url 'crear_reserva' %}" class="btn btn-primary">Agregar Reserva</a>
+    </div>
+</div>
+{% endblock %}

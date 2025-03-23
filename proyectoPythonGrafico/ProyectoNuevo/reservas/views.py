@@ -12,7 +12,7 @@ from .models import Cliente
 def reservas(request):
     if request.method == "GET":
         reservas = Reserva.objects.all().values()
-        return JsonResponse({"reservas": list(reservas)})
+        return render(request, "reservas.html", {"reservas": reservas})
     
     elif request.method == "POST":
         data = json.loads(request.body)
