@@ -33,5 +33,15 @@ export class AreaService {
         return await this.areaRepository.save(area)
     }
 
+    async updateArea(areaDto :areaDto) : Promise<Area> {
+        const existingArea = await this.areaRepository.findOne({where : {id: areaDto.id}})
+        if (!existingArea) {
+            throw new error("NO EXISTE DICHA AREA")
+        }
+
+        existingArea.name = areaDto.name; 
+        return await this.areaRepository.save(existingArea)
+    }
+
 
 }

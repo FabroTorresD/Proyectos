@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post , Body} from '@nestjs/common';
+import { Controller, Get, Param, Post , Body, Put} from '@nestjs/common';
 import { AreaService } from './area.service';
 import { Area } from 'src/entities/area.entity';
 import { areaDto } from './dto/area.dto';
@@ -24,5 +24,10 @@ export class AreaController {
     
         return this.areaService.create(areaDto);
     }
-    
+
+
+    @Put()
+  async update(@Body() areaDto: areaDto) {
+    return this.areaService.updateArea(areaDto);
+  }
     }
