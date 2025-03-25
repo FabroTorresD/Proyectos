@@ -26,7 +26,7 @@ export class AreaService {
         const existingArea = await this.areaRepository.findOne({where : {name: areaDto.name}})
         
         if (existingArea){
-            throw new error('NOMBRE DE AREA EXISTENTE')
+            throw new error('NOMBRE DE AREA EX')
         }
         
         const area = this.areaRepository.create(areaDto)
