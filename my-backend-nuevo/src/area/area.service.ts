@@ -43,5 +43,18 @@ export class AreaService {
         return await this.areaRepository.save(existingArea)
     }
 
+    async deleteArea(areaDto :areaDto) : Promise<Area> {
+        const existingArea = await this.areaRepository.findOne({where : {id: areaDto.id}})
+
+        if (!existingArea) {
+            throw new error("NO EXISTE DICHA AREA")
+        }
+
+    
+         await this.areaRepository.delete({id: areaDto.id})
+ 
+         return existingArea;
+    } 
+
 
 }
