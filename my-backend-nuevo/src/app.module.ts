@@ -5,6 +5,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Trabajador } from './entities/trabajador.entity';
 import { TrabajadorService } from './trabajador/trabajador.service';
 import { TrabajadorController } from './trabajador/trabajador.controller';
+import { AreaController } from './area/area.controller';
+import { Area } from './entities/area.entity';
+import { AreaService } from './area/area.service';
 
 @Module({
   imports: [
@@ -15,12 +18,11 @@ import { TrabajadorController } from './trabajador/trabajador.controller';
       username: 'postgres',
       password: '1234',
       database: 'test',
-      entities: [Trabajador],
-      synchronize: true, // Solo para desarrollo
+      entities: [Trabajador, Area],
     }),
-    TypeOrmModule.forFeature([Trabajador]), 
+    TypeOrmModule.forFeature([Trabajador, Area]), 
   ],
-  controllers: [AppController, TrabajadorController],
-  providers: [AppService, TrabajadorService],
+  controllers: [AppController, TrabajadorController, AreaController],
+  providers: [AppService, TrabajadorService, AreaService],
 })
 export class AppModule {}

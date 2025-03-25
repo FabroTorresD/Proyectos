@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { TrabajadorService } from './trabajador.service'; //
+import { TrabajadorService } from './trabajador.service'; 
 import { Trabajador } from 'src/entities/trabajador.entity';
 
 @Controller('/api/trabajadores')
