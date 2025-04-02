@@ -1,0 +1,28 @@
+.home-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../public/6wY.gif"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .neon-text {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #800080;
+    color: white;
+    z-index: 10;
+  }
+  
+  .icon {
+    position: absolute;
+    font-size: 4rem;
+  }
+  
