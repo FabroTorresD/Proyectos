@@ -2,8 +2,8 @@ import { Code, Briefcase, GraduationCap, Heart } from "lucide-react";
 import "./AboutMe.css";
 
 const skills = [
-  "JavaScript", "TypeScript", "React", "Node.js",
-  "Express", "MongoDB", "CSS/SCSS", "Tailwind CSS", "Git"
+  "JavaScript", "Python", "React", "Node.js",
+  "Java", "SQL", "CSS", "Ingles", "Git"
 ];
 
 const AboutMe = () => {
@@ -15,12 +15,20 @@ const AboutMe = () => {
         <div className="about-grid">
           <div className="about-text">
             <p>
-              Soy un desarrollador apasionado con experiencia en crear aplicaciones web atractivas y funcionales.
-              Me encanta resolver problemas complejos y transformar ideas en productos digitales utilizando las tecnologías más modernas.
+              Soy estudiante avanzado en la carrera de Ingenieria en Sistemas de Informacion.
+              Me considero una persona autodidacta, con
+              una fuerte orientación al aprendizaje
+              continuo y la mejora constante. Me destaco
+              por ser responsable, proactivo y capaz de
+              adaptarme rápidamente a nuevos entornos y
+              desafíos.
             </p>
             <p>
-              Con más de 5 años de experiencia en el desarrollo web, he trabajado en proyectos de diversos tamaños,
-              desde pequeñas páginas web hasta aplicaciones empresariales complejas.
+              Cuento con habilidades para el
+              trabajo en equipo, así como para la resolución
+              de problemas de manera eficiente y creativa.
+              Mi compromiso con la calidad y la disciplina
+              se refleja en cada proyecto que emprendo
             </p>
 
             <div className="skills">
@@ -52,7 +60,9 @@ const AboutMe = () => {
                 <GraduationCap className="icon" size={24} />
               </div>
               <h3>Educación</h3>
-              <p>Licenciado en Ciencias de la Computación con formación continua en nuevas tecnologías.</p>
+              <p>Estudiante avanzado en la carrera de Ingenieria en Sistemas de Informacion, en la Universidad 
+                Teconologica Nacional, Facultad Regional Cordoba.
+              </p>
             </div>
 
             <div className="about-card">

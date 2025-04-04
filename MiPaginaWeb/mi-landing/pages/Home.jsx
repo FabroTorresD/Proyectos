@@ -2,6 +2,7 @@ import "../styles/home.style.css";
 import { Link } from "react-router-dom"; // Si querés usar navegación interna
 import { ArrowDown } from "lucide-react";
 
+
 const Home = () => {
   return (
     <section id="home" className="home-container">
@@ -16,8 +17,8 @@ const Home = () => {
             Desarrollador Full Stack & Diseñador UI/UX
           </p>
           <div className="button-group">
-            <a href="/proyects" className="btn primary">Ver Proyectos</a>
-            <a href="/contact" className="btn outline">Contactarme</a>
+            <Link to="/proyects" className="btn primary">Ver Proyectos</Link>
+            <Link to="/contact" className="btn outline">Contactarme</Link>
           </div>
         </div>
         <div className="scroll-down">
