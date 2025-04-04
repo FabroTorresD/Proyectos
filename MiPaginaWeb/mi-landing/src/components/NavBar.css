@@ -1,0 +1,25 @@
+/* Transición suave */
+.transition-navbar {
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+}
+
+/* Fondo blanco fijo */
+.backdrop-blur {
+  background-color: #ffffff !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+/* Enlaces negros */
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: #000000 !important;
+}
+
+/* Hover en violeta */
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+  color: #646cff !important;
+}
