@@ -2,8 +2,6 @@
 
 ###
 
-<img src="https://raw.githubusercontent.com/FabroTorresD/FabroTorresD/output/snake.svg" alt="Snake animation" />
-
 ###
 
 <div align="center">
